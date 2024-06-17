@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+   <script src="https://kit.fontawesome.com/3d2fe1d22b.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="css/quizBg.css">
+   <title>Quiz</title>
+</head>
+
+<body>
+   <!-- haeder menu-->
+   <header id="header">
+      <h2 class="logo">QuizLet</h2>
+      <nav class="navigation">
+         <a href="index.html#home" class="active">Home<span></span></a>
+         <a href="index.html#about">About<span></span></a>
+         <a href="index.html#quizlet">Quizlet<span></span></a>
+         <a href="index.html#contact">Contact<span></span></a>
+      </nav>
+   </header>
+   <!-- main section -->
+   <main class="main">
+      <section class="home">
+         <div class="home_container">
+            <img src="image\quizBg\home-points.png" class="home_points">
+            <img src="image\quizBg\home-shadow.png" class="home_shadow">
+            <img src="image\quizBg\home-moon.png" class="home_moon">
+            <img src="image\quizBg\home-trees.png" class="home_trees">
+            <img src="image\quizBg\home-pumpkin.png" class="home_pumpkin">
+            <img src="image\quizBg\home-stones.png" class="home_stones">
+            <img src="image\quizBg\home-grass.png" class="home_grass">
+
+            <div class="home_titles">
+               <h2 class="home_subtitle">Quiz on </h2>
+               <h1 class="home_title">Halloween</h1>
+            </div>
+         </div>
+
+         <div class="home_data">
+            <a href="#" class="home_button">
+               <img src="image\quizBg\button.png" alt="">
+               <span>READY</span>
+            </a>
+         </div>
+      </section>
+   </main>
+   <!--Disclaimer  -->
+   <div class="popup-info">
+      <h2>Quiz Guide <i class="fa-solid fa-book-skull"></i></h2>
+      <span class="info"> - There are 5 multiple-choice questions in this quiz. </span>
+      <span class="info"> - Select the most appropriate answer for each question.</span>
+      <span class="info"> - Once you select an answer, it cannot be changed.</span>
+      <span class="info"> - After answering all questions, click on the "Submit" button. </span>
+      <span class="info"> - Review your score and you can try again.</span>
+      <div class="btn-group">
+         <button class="info-btn exit-btn">Exit Quiz</button>
+         <a href="mcq.html" class="info-btn continue-btn">Continue</a>
+      </div>
+   </div>
+
+
+   <script src="js/quizBg_gsap.min.js"></script>
+   <script src="js/quizBg.js"></script>
+</body>
+
+</html>

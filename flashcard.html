@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory FlashCard </title>
+  <link rel="stylesheet" href="css/flashcard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/flashcard_background.css">
+</head>
+
+<body>
+  <!-- background -->
+  <div class="scene">
+    <div class="moon"></div>
+    <img src="image\flashcard\background\forest.png" class="forest">
+    <img src="image\flashcard\background\cloud1.png" class="cloud1">
+    <img src="image\flashcard\background\cloud2.png" class="cloud2">
+    <img src="image\flashcard\background\cloud3.png" class="cloud3">
+    <img src="image\flashcard\background\cloud1.png" class="cloud4">
+    <img src="image\flashcard\background\cloud2.png" class="cloud5">
+    <img src="image\flashcard\background\cloud3.png" class="cloud6">
+  </div>
+  <section class="star">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </section>
+  <!-- header menu -->
+  <header id="header">
+    <h2 class="logo">QuizLet</h2>
+    <nav class="navigation_menu">
+      <a href="index.html#home" class="active">Home<span></span></a>
+      <a href="index.html#about">About<span></span></a>
+      <a href="index.html#quizlet">Quizlet<span></span></a>
+      <a href="index.html#contact">Contact<span></span></a>
+    </nav>
+  </header>
+  <!-- main menu -->
+  <div class="main">
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+
+    <div id="state">
+      <span id="time">0</span>
+      <span id="score">0</span>
+    </div>
+  </div>
+  <!-- flashcard theme menu -->
+  <section id="pre" class="">
+    <div id="themes">
+      <h2><b>TICK & PLAY</b></h2>
+      <p id="pokemon" class="themes" title="Pokemon">Pokemon</p>
+      <p id="disney" class="themes" title="Disney">Disney</p>
+      <p id="harrypotter" class="themes" title="Harry Potter">Harry Potter</p>
+    </div>
+  </section>
+  <!-- result section -->
+  <section id="post" class="hidden">
+    <div>
+      <h2>You WON &#x1F60E; </h2>
+      <p id="final"></p>
+      <br>
+      <p>
+        <a id="again"><b>Dare to Play !</b></a>
+      </p>
+    </div>
+  </section>
+
+  <script src="js/flashcard.js"></script>
+  <!-- background animation -->
+  <script type="text/javascript">
+    function stars() {
+      let count = 500;
+      let scene = document.querySelector('.scene');
+      let i = 0;
+      while (i < count) {
+        let star = document.createElement("i");
+        let x = Math.floor(Math.random() * window.innerWidth);
+        let y = Math.floor(Math.random() * window.innerHeight);
+        let duration = Math.random() * 10;
+        let size = Math.random() * 2;
+        star.style.left = x + 'px';
+        star.style.top = y + 'px';
+        star.style.width = 1 + size + 'px';
+        star.style.height = 1 + size + 'px';
+        star.style.animationDuration = duration + 's';
+        star.style.animationDelay = duration + 's';
+        scene.appendChild(star);
+        i++
+      }
+    }
+    stars();
+  </script>
+</body>
+
+</html>

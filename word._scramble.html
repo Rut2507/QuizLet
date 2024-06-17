@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Word Scramble</title>
+  <link rel="stylesheet" href="css/word_scramble.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/word_scramble.js" defer></script>
+  <style>
+    #foreground {
+    height: 900px;
+    position: absolute;
+    margin-top: -200px;
+    overflow-y: hidden;
+}
+
+.moon {
+    left: 25%;
+    position: absolute;
+    top: 100px;
+}
+
+.horseman {
+    width: 390px;
+    height: 200px;
+    background: url('image/word_scramble/horse-hallow5.svg');
+    animation: horsemove 0.7s steps(15) infinite;
+    position: absolute;
+    left: 20%;
+    margin-left: -100px;
+    top: 300px;
+}
+
+.ground {
+    width: 105%;
+    height: 100%;
+    position: absolute;
+    background-size: 900px 716px;
+    left: 0;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.front {
+    background: url('image/word_scramble/tree_front.svg') repeat-x;
+    background-size: 1000px 871px;
+    top: -100px;
+    animation: bk 20s -5s linear infinite;
+}
+
+.frontmid {
+    background: url('image/word_scramble/tree_mid.svg') repeat-x;
+    background-size: 1000px 871px;
+    top: -100px;
+    animation: bk 50s -5s linear infinite;
+}
+
+.mid {
+    background: url('image/word_scramble/tree_back.svg') repeat-x;
+    background-size: 1000px 871px;
+    top: -100px;
+    animation: bk 100s -5s linear infinite;
+}
+
+.back {
+    background: url('image/word_scramble/grass.svg') repeat-x;
+    background-size: 1000px 871px;
+    top: -100px;
+    animation: bk 100s -5s linear infinite;
+}
+
+@keyframes horsemove {
+    100% {
+        background-position: 0 -1848px;
+    }
+}
+
+@keyframes bk {
+    100% {
+        background-position: -200% 0;
+    }
+}
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <h2 class="logo">QuizLet</h2>
+     <nav class="navigation">
+      <a href="index.html#home" class="active">Home<span></span></a>
+      <a href="index.html#about">About<span></span></a>
+      <a href="index.html#quizlet">Quizlet<span></span></a>
+      <a href="index.html#contact">Contact<span></span></a>
+    </nav>
+  </header>
+
+  <svg class="moon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
+    width="100" height="100">
+    <circle r="30" fill="#fff" cx="70" cy="70"></circle>
+  </svg>
+  <div class="back ground"></div>
+  <div class="mid ground"></div>
+  <div class="frontmid ground"></div>
+  <div class="front ground"></div>
+  <div class="horseman"></div>
+
+  <div class="container">
+    <div>
+      <h1><u>Word Scramble</u></h1>
+      <div class="content">
+        <p class="word"></p>
+        <div class="details">
+          <p class="hint">Hint: <span></span></p>
+          <p class="time">Time Left: <span><b>20</b>s</span></p>
+        </div>
+        <input type="text" spellcheck="false" placeholder="Enter a valid word">
+        <div class="buttons">
+          <button class="refresh-word">Refresh Word</button>
+          <button class="check-word">Check Word</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function sceneOne() {
+      var tl = new TimelineMax();
+
+      tl.add("begin", "+=1");
+      tl.fromTo(".pumpkin", 2, {
+        scale: 0,
+        x: 0,
+        y: 0,
+        rotation: 180
+      }, {
+        scale: 1,
+        bezier: {
+          type: "soft",
+          values: [{
+            x: 400,
+            y: 175
+          }, {
+            x: 30,
+            y: 250
+          }],
+          autoRotate: false
+        },
+        rotation: 0,
+        ease: Circ.easeInOut
+      }, "begin+=1");
+      tl.to("#face, #back-area", 1, {
+        opacity: 0.5,
+        yoyo: true,
+        repeatDelay: 0.65,
+        repeat: -1,
+        ease: RoughEase.ease.config({ template: Power0.easeNone, strength: 1, points: 20, taper: "none", randomize: true, clamp: false })
+      }, "begin+=3");
+      tl.from("h1", 2, {
+        opacity: 0,
+        ease: RoughEase.ease.config({ template: Power0.easeNone, strength: 1, points: 20, taper: "none", randomize: true, clamp: false })
+      }, "begin+=3");
+      tl.from("h1", 1, {
+        rotationX: 180,
+        ease: Sine.easeOut
+      }, "begin+=3");
+
+      return tl;
+    }
+    var master = new TimelineMax();
+    master.add(sceneOne(), "first");
+  </script>
+</body>
+
+</html>

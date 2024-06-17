@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="css/mcq.css">
+</head>
+
+<body>
+    <!-- background -->
+    <div class="banner">
+        <img src="image\mcq\spider.png" class="spider1">
+        <img src="image\mcq\spider.png" class="spider2">
+        <img src="image\mcq\pumpkin01.png" class="pumpkin01">
+        <img src="image\mcq\pumpkin02.png" class="pumpkin02">
+        <img src="image\mcq\spiderWeb.png" class="spiderWeb">
+    </div>
+    <!-- quiz container -->
+    <div id="container">
+        <img id="start" src="image\mcq\start.gif">
+        <div id="text" class="containerImg-text">START</div>
+        <div id="quiz" style="display: none">
+            <h1>Halloween Tricks</h1>
+            <div id="question"></div>
+            <div id="qImg"></div>
+            <div id="choices">
+                <hr>
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+                <hr>
+            </div>
+            <div id="timer">
+                <div id="counter"></div>
+                <div id="btimeGauge"></div>
+                <div id="timeGauge"></div>
+            </div>
+            <div id="progress"></div>
+        </div>
+        <div id="scoreContainer" style="display: none"></div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const hide = document.getElementById('text');
+            hide.style.display = "none";
+        }, 4000); //start overlay text display time
+    </script>
+    <script src="js/mcq.js"></script>
+</body>
+
+</html>

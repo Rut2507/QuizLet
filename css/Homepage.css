@@ -1,0 +1,421 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700,300);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 6px 15px;
+  transition: .5s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  color: #06324e;
+}
+
+.navigation a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 30px;
+  z-index: -1;
+  transform: scale(0);
+  opacity: 0;
+  transition: .5s;
+}
+
+.navigation a:hover span,
+.navigation a.active span {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.bg-header {
+  background-color: rgba(0, 0, 0, 0.438);
+}
+
+#text {
+  position: absolute;
+  font-size: 5em;
+  color: #1b283a;
+  text-shadow: 2px 4px 5px #f9f9f9;
+}
+
+.parallax img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.parallax img#gate-left {
+  transform: translateX(-282px);
+  position: fixed;
+}
+
+.parallax img#gate-right {
+  transform: translateX(305px);
+  position: fixed;
+}
+
+.sec {
+  position: relative;
+  background: #020912;
+  padding: 30px 100px;
+  height: 145vh;
+}
+
+.sec h2 {
+  font-size: 3em;
+  color: #f3ebd8;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sec pre {
+  font-size: 1.5em;
+  color: #d615a3;
+  font-family: Papyrus;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sec b {
+  font-size: 1.4rem;
+  color: #dfdbce;
+  font-family: Papyrus;
+  font-weight: 300;
+}
+
+.sec pre:hover {
+  border-bottom: 4px double #c40094;
+  border-top: 4px double #c40094;
+  background-color: #0807252f;
+  color: #f79518;
+}
+
+body .page {
+  margin: 80px auto;
+  width: 920px;
+  border-bottom: 3px solid rgb(255, 255, 179);
+}
+
+body .content {
+  width: 33.33%;
+  display: inline-block;
+  border-top: 3px solid rgb(255, 255, 179);
+  margin: 0 auto;
+  position: relative;
+  height: 45vh;
+  max-width: 300px;
+}
+
+body .circle_inner__layer {
+  width: 600px;
+  height: 200px;
+  transition: all 0.4s;
+  position: absolute;
+  top: 0;
+  left: -200px;
+}
+
+body .circle_inner__layer img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+body .circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  width: 200px;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+body .circle:hover .circle_shine {
+  top: 330px;
+  left: -200px;
+}
+
+body .circle:hover h2,
+body .circle:hover h3 {
+  opacity: 1;
+  top: -36px;
+}
+
+body .circle:hover .content_shadow {
+  transform: scale(1.1);
+  top: -22px;
+}
+
+body .circle:hover h3 {
+  transition: all 0.2s 0.04s;
+}
+
+body .circle:hover h2 {
+  transition: all 0.2s;
+}
+
+body .circle .circle_inner__layer:nth-of-type(1) {
+  top: 0px;
+  left: 0px;
+}
+
+body .circle .circle_inner__layer:nth-of-type(2) {
+  top: 0px;
+  left: -210px;
+}
+
+body .circle .circle_inner__layer:nth-of-type(3) {
+  top: 0px;
+  left: -440px;
+}
+
+body .circle_title {
+  text-align: center;
+}
+
+body .circle_title h2,
+body .circle_title h3 {
+  opacity: 0;
+  color: #10a1aa;
+  margin: 0;
+  transition: all 0.2s 0.04s;
+  position: relative;
+  top: -10px;
+}
+
+body .circle_title h3 {
+  transition: all 0.2s;
+  color: #c40094;
+  font-size: 15px;
+}
+
+body .circle_inner {
+  border-radius: 200px;
+  background: #B0D5D6;
+  overflow: hidden;
+  margin: auto;
+  width: 200px;
+  z-index: 1;
+  transition: all 0.3s;
+  height: 200px;
+  position: relative;
+}
+
+body .circle_inner:hover {
+  transform: scale(1.1);
+}
+
+body .circle_inner:hover .circle_inner__layer:nth-of-type(1) {
+  left: -80px;
+  transition: all 4s linear;
+}
+
+body .circle_inner:hover .circle_inner__layer:nth-of-type(2) {
+  left: -400px;
+  transition: all 4s linear;
+}
+
+body .circle_inner:hover .circle_inner__layer:nth-of-type(3) {
+  left: -140px;
+  transition: all 4s linear;
+}
+
+body .content_shadow {
+  width: 200px;
+  box-shadow: 0px 31px 19px -2px #12acb2;
+  height: 20px;
+  border-radius: 70%;
+  position: relative;
+  top: -44px;
+  transition: all 0.3s;
+  z-index: 0;
+}
+
+footer {
+  font-family: "Poppins", sans-serif;
+  height: 30vh;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 0px;
+  background: #022634;
+  border-top: aliceblue 2px solid;
+  border-bottom: aliceblue 3px solid;
+}
+
+.social p {
+  color: aliceblue;
+  font-size: 22px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: aliceblue;
+  color: rgb(0, 0, 15);
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: aliceblue;
+  color: aliceblue;
+  font-family: "Poppins", sans-serif;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: 60px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #0077b5;
+  color: aliceblue;
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #4267b2;
+  color: aliceblue;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: aliceblue;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: aliceblue;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333;
+  color: aliceblue;
+}
+
+.copyright{
+  height: 10vh;
+  width: 100%;
+  bottom: 0;
+  background-color: #020912;
+  color: rgb(184, 179, 179);
+  text-align: center;
+  padding-top: 25px;
+  font-size: large;
+}
+
+::-webkit-scrollbar {
+  width: .6rem;
+  background-color: hsl(202, 16%, 15%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #06324e;
+}
